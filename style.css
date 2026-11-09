@@ -1,0 +1,533 @@
+/* ==========================================================================
+   BEN POLLACK — CLASSIC LUXURY & AESTHETIC DARK PALETTE
+   ========================================================================== */
+
+:root {
+    --bg-black: #0D0D0E;            /* Deep Obsidian Black */
+    --brand-orange: #E35A22;        /* Exact "by BEN" Orange Accent */
+    --card-dark: #161618;
+    --text-white: #F4F4F6;
+    --text-muted: #A0A0A8;
+    --font-serif: 'Italiana', serif;
+    --font-sans: 'Inter', sans-serif;
+    --font-brand: 'Syne', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body.ben-experience {
+    background-color: var(--bg-black);
+    color: var(--text-white);
+    font-family: var(--font-sans);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* ==========================================================================
+   HEADER / NAVBAR
+   ========================================================================== */
+
+.main-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    padding: 24px 5%;
+    background: linear-gradient(180deg, rgba(13, 13, 14, 0.9) 0%, transparent 100%);
+    backdrop-filter: blur(8px);
+}
+
+.header-inner {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.brand-logo {
+    text-decoration: none;
+    display: flex;
+    align-items: baseline;
+    gap: 4px;
+}
+
+.by-text {
+    font-family: var(--font-serif);
+    font-size: 1.6rem;
+    font-style: italic;
+    color: var(--brand-orange);
+}
+
+.ben-text {
+    font-family: var(--font-brand);
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: var(--brand-orange);
+    letter-spacing: -0.5px;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+}
+
+.nav-links a {
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: var(--text-white);
+}
+
+.nav-btn-highlight {
+    background: var(--brand-orange);
+    color: #FFFFFF !important;
+    padding: 8px 20px;
+    border-radius: 20px;
+    font-weight: 600;
+}
+
+/* ==========================================================================
+   1. HERO VIDEO BACKGROUND SECTION
+   ========================================================================== */
+
+.hero-video-stage {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.video-background-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    overflow: hidden;
+}
+
+#heroBgVideo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures video fills screen without stretching */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1.02); /* Slight scale to eliminate blank borders */
+}
+
+.hero-dark-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at center, rgba(13, 13, 14, 0.45) 0%, rgba(13, 13, 14, 0.88) 100%);
+    z-index: 2;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 10;
+    text-align: center;
+    max-width: 800px;
+    padding: 0 20px;
+}
+
+.hero-eyebrow {
+    font-size: 0.8rem;
+    letter-spacing: 4px;
+    color: var(--text-muted);
+    display: block;
+    margin-bottom: 12px;
+}
+
+.hero-signature {
+    margin-bottom: 20px;
+}
+
+.signature-by {
+    font-family: var(--font-serif);
+    font-size: 6rem;
+    font-style: italic;
+    color: var(--brand-orange);
+    margin-right: 8px;
+}
+
+.signature-ben {
+    font-family: var(--font-brand);
+    font-size: 7rem;
+    font-weight: 800;
+    color: var(--brand-orange);
+    letter-spacing: -2px;
+}
+
+.hero-subtext {
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.88);
+    margin-bottom: 32px;
+    font-weight: 300;
+}
+
+.btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    background: var(--brand-orange);
+    color: #FFFFFF;
+    padding: 14px 32px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(227, 90, 34, 0.4);
+}
+
+/* Mouse Scroll Indicator */
+.scroll-down-indicator {
+    position: absolute;
+    bottom: 30px;
+    z-index: 10;
+}
+
+.mouse-icon {
+    width: 24px;
+    height: 38px;
+    border: 2px solid rgba(255, 255, 255, 0.4);
+    border-radius: 12px;
+    position: relative;
+}
+
+.wheel {
+    width: 4px;
+    height: 8px;
+    background: var(--brand-orange);
+    border-radius: 2px;
+    position: absolute;
+    top: 6px;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: scrollWheel 1.8s infinite;
+}
+
+@keyframes scrollWheel {
+    0% { opacity: 1; transform: translate(-50%, 0); }
+    100% { opacity: 0; transform: translate(-50%, 14px); }
+}
+
+/* ==========================================================================
+   2. ABOUT SECTION
+   ========================================================================== */
+
+.about-section {
+    padding: 120px 5%;
+    position: relative;
+    background: var(--bg-black);
+}
+
+.about-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.about-badge-tag {
+    color: var(--brand-orange);
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+    margin-bottom: 24px;
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+}
+
+.about-statement {
+    font-family: var(--font-serif);
+    font-size: 2.8rem;
+    line-height: 1.2;
+    font-weight: 400;
+}
+
+.about-statement em {
+    color: var(--brand-orange);
+    font-style: italic;
+}
+
+.about-p1 {
+    font-size: 1.05rem;
+    color: var(--text-white);
+    margin-bottom: 18px;
+    font-weight: 300;
+}
+
+.about-p2 {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    margin-bottom: 36px;
+    font-weight: 300;
+}
+
+.about-stats-row {
+    display: flex;
+    gap: 40px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 24px;
+}
+
+.stat-num {
+    font-family: var(--font-brand);
+    font-size: 2rem;
+    color: var(--brand-orange);
+    display: block;
+}
+
+.stat-label {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+}
+
+/* ==========================================================================
+   PERFECT ENDLESS MARQUEE SCROLL (NO SNAPPING, NO GAPS)
+   ========================================================================== */
+
+.portfolio-section {
+    padding: 100px 0;
+    background: #111113;
+    overflow: hidden;
+    position: relative;
+}
+
+.portfolio-header {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 60px auto;
+    padding: 0 20px;
+}
+
+.portfolio-kicker {
+    color: var(--brand-orange);
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+}
+
+.portfolio-title {
+    font-family: var(--font-serif);
+    font-size: 3rem;
+    margin-top: 8px;
+    margin-bottom: 12px;
+}
+
+.portfolio-subtitle {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    font-weight: 300;
+}
+
+/* Video Wall Container */
+.video-wall-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+    width: 100vw;
+}
+
+.wall-row {
+    display: flex;
+    width: 100%;
+    overflow: hidden;
+    user-select: none;
+}
+
+.row-track {
+    display: flex;
+    gap: 24px;
+    width: max-content;
+    will-change: transform;
+}
+
+/* Seamless Continuous Animations */
+.row-left .row-track {
+    animation: marqueeScrollLeft 30s linear infinite;
+}
+
+.row-right .row-track {
+    animation: marqueeScrollRight 30s linear infinite;
+}
+
+.row-left-slow .row-track {
+    animation: marqueeScrollLeft 42s linear infinite;
+}
+
+/* Pause track on hover */
+.wall-row:hover .row-track {
+    animation-play-state: paused;
+}
+
+/* MATHEMATICALLY PERFECT 50% LOOP KEYFRAMES */
+@keyframes marqueeScrollLeft {
+    0% {
+        transform: translateX(0%);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+@keyframes marqueeScrollRight {
+    0% {
+        transform: translateX(-50%);
+    }
+    100% {
+        transform: translateX(0%);
+    }
+}
+
+/* Video Card Aesthetics */
+.video-card {
+    width: 320px; /* Expanded card width to fill space nicely */
+    background: var(--card-dark);
+    border-radius: 18px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    flex-shrink: 0;
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease;
+}
+
+.video-card:hover {
+    transform: translateY(-6px) scale(1.02);
+    border-color: var(--brand-orange);
+}
+
+.video-thumb {
+    width: 100%;
+    height: 420px; /* Tall portrait card proportion */
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.play-overlay {
+    width: 52px;
+    height: 52px;
+    background: rgba(227, 90, 34, 0.9);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #FFFFFF;
+    font-size: 1.1rem;
+    opacity: 0;
+    transform: scale(0.8);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.video-card:hover .play-overlay {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.card-info {
+    padding: 18px;
+}
+
+.card-cat {
+    font-size: 0.72rem;
+    color: var(--brand-orange);
+    letter-spacing: 1.5px;
+    font-weight: 700;
+    display: block;
+    margin-bottom: 4px;
+}
+
+.card-info h4 {
+    font-size: 0.98rem;
+    font-weight: 600;
+    color: var(--text-white);
+}
+
+/* ==========================================================================
+   FOOTER
+   ========================================================================== */
+
+.main-footer {
+    padding: 100px 5% 40px 5%;
+    text-align: center;
+    background: var(--bg-black);
+}
+
+.footer-title {
+    font-family: var(--font-serif);
+    font-size: 3rem;
+    margin-bottom: 12px;
+}
+
+.main-footer p {
+    color: var(--text-muted);
+    margin-bottom: 32px;
+}
+
+.footer-email-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    background: var(--card-dark);
+    border: 1px solid var(--brand-orange);
+    color: var(--brand-orange);
+    padding: 16px 36px;
+    border-radius: 40px;
+    text-decoration: none;
+    font-family: var(--font-brand);
+    font-size: 1.1rem;
+    font-weight: 700;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+.footer-email-btn:hover {
+    background: var(--brand-orange);
+    color: #FFFFFF;
+}
+
+.footer-bottom {
+    margin-top: 80px;
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.3);
+}
+
+/* RESPONSIVE */
+@media (max-width: 992px) {
+    .signature-by { font-size: 4rem; }
+    .signature-ben { font-size: 4.5rem; }
+    .about-grid { grid-template-columns: 1fr; }
+}
